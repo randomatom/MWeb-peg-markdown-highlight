@@ -391,8 +391,8 @@ StyleBlock =    < s:LocMarker InStyleTags >
 
 ListStart = !HorizontalRule NonindentSpace < ('+' | '*' | '-' | ([0-9]+ '.')  ) > Spacechar+
 
-Inlines  =  ( !Endline !ListStart Inline
-              | Endline &Inline )+ Endline?
+Inlines  =  ( !Endline Inline
+              | Endline !ListStart &Inline )+ Endline?
 
 Inline  = Str
         | Endline
