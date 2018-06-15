@@ -49,7 +49,7 @@ Block =     BlankLine*
             | Para
             | Plain )
 
-Para =      NonindentSpace Inlines BlankLine+
+Para =      NonindentSpace Inlines BlankLine*
 
 Plain =     Inlines
 
@@ -388,7 +388,10 @@ StyleBlock =    < s:LocMarker InStyleTags >
                 BlankLine*
                 { ADD(elem_s(pmh_HTMLBLOCK)); }
 
-Inlines  =  ( !Endline Inline
+
+ListStart = !HorizontalRule NonindentSpace < ('+' | '*' | '-' | ([0-9]+ '.')  ) > Spacechar+
+
+Inlines  =  ( !Endline !ListStart Inline
               | Endline &Inline )+ Endline?
 
 Inline  = Str
