@@ -1,6 +1,20 @@
 
+缘起
+========================
+还是同 https://github.com/randomatom/hoedown-mweb 项目。
+对 markdown 解析表示不满意，自己动手，丰衣足食。
+
+最后会整合到 https://github.com/oulvhai/MWeb-issues/issues 上去。
+
+改动不多，只为了支持 ：
+1. 列表高亮 之前不用多空一行；
+2. 代码块 之前 不用多空一行；
+
+
+
 PEG Markdown Highlight
 ========================
+
 _Copyright 2011-2016 Ali Rantakari_ -- <http://hasseg.org>
 
 This is a syntax highlighter for the [Markdown] language, designed to be integrated into GUI text editor programs. It uses a recursive-descent parser for interpreting the input (instead of e.g. regular expressions), and this parser is based on the PEG grammar from John MacFarlane's [peg-markdown] project.
