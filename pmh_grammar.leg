@@ -63,9 +63,9 @@ AtxHeading = < s:AtxStart Sp ( AtxInline )+ (Sp '#'* Sp)? Newline >
 
 SetextHeading = SetextHeading1 | SetextHeading2
 
-SetextBottom1 = '='+ Newline
+SetextBottom1 = '=' '='+ Newline
 
-SetextBottom2 = '-'+ Newline
+SetextBottom2 = '-' '-'+ Newline
 
 SetextHeading1 =  &(RawLine SetextBottom1)
                   s:LocMarker
