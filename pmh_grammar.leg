@@ -572,9 +572,11 @@ Reference = < s:LocMarker
                 FREE_ADDRESS(r);
               }
 
+SimpleTxtInline = Str | Space | EscapedChar | Symbol
+
 Label = < s:LocMarker
         '[' ( !'^' &{ EXT(pmh_EXT_NOTES) } | &. &{ !EXT(pmh_EXT_NOTES) } )
-        < ( !']' Inline )* >
+        < ( !']' SimpleTxtInline )* >
         { s->label = COPY_YYTEXT_ORIG(); }
         ']' >
         {
